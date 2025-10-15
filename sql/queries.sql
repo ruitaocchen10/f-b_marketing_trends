@@ -1,3 +1,5 @@
+SELECT * FROM marketing_data;
+
 -- Query for customer segmentation
 SELECT
     income,

@@ -65,3 +65,4 @@ FROM marketing_data
 GROUP BY marketing_campaign
 ORDER BY average_web_purchases DESC
 ;
+

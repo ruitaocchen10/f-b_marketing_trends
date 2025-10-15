@@ -1,48 +1,43 @@
--- Query 2: Count how many customers bought each product category
+-- Count how many customers bought each product category
 SELECT
     'Wines' AS product_category,
-    COUNT(*) AS customer_count
+    COUNT(*) AS customer_count,
+    SUM(mntwines) AS total_sales
 FROM marketing_data
-WHERE MntWines > 0
-
+WHERE mntwines > 0
 UNION ALL
-
 SELECT
     'Fruits' AS product_category,
-    COUNT(*) AS customer_count
+    COUNT(*) AS customer_count,
+    SUM(mntfruits) AS total_sales
 FROM marketing_data
-WHERE MntFruits > 0
-
+WHERE mntfruits > 0
 UNION ALL
-
 SELECT
     'Meat Products' AS product_category,
-    COUNT(*) AS customer_count
+    COUNT(*) AS customer_count,
+    SUM(mntmeatproducts) AS total_sales
 FROM marketing_data
-WHERE MntMeatProducts > 0
-
+WHERE mntmeatproducts > 0
 UNION ALL
-
 SELECT
     'Fish Products' AS product_category,
-    COUNT(*) AS customer_count
+    COUNT(*) AS customer_count,
+    SUM(mntfishproducts) AS total_sales
 FROM marketing_data
-WHERE MntFishProducts > 0
-
+WHERE mntfishproducts > 0
 UNION ALL
-
 SELECT
     'Sweet Products' AS product_category,
-    COUNT(*) AS customer_count
+    COUNT(*) AS customer_count,
+    SUM(mntsweetproducts) AS total_sales
 FROM marketing_data
-WHERE MntSweetProducts > 0
-
+WHERE mntsweetproducts > 0
 UNION ALL
-
 SELECT
     'Gold Products' AS product_category,
-    COUNT(*) AS customer_count
+    COUNT(*) AS customer_count,
+    SUM(mntgoldprods) AS total_sales
 FROM marketing_data
-WHERE MntGoldProds > 0
-
-ORDER BY customer_count DESC;
+WHERE mntgoldprods > 0
+;
