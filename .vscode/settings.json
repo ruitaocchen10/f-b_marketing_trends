@@ -1,0 +1,15 @@
+{
+  "sqltools.connections": [
+    {
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "marketing_db",
+      "database": "marketing_db",
+      "username": "postgres",
+      "password": "Rc3288.2016"
+    }
+  ]
+}
