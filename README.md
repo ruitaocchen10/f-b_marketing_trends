@@ -60,6 +60,10 @@ Investigated factors driving web purchases including income brackets, education 
 - Upper-middle income ($60-80k) customers make the most web purchases (5.66 avg)
 - Critical paradox: Customers who visit the website MORE make FEWER purchases—this indicates serious conversion problems
 
+## Tableau Visualizations
+
+**Source:**: https://public.tableau.com/app/profile/ruitao.chen/viz/MarketingCampaignAnalysis_17606248101080/Dashboard1
+
 ## Technical Stack
 
 **Database:** PostgreSQL 12+
