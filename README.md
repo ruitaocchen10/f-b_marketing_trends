@@ -1,10 +1,6 @@
 # Marketing Campaign Analysis
 
-A comprehensive analysis of customer behavior, campaign performance, and product preferences using SQL and Python to derive actionable marketing insights from a dataset of 2,240 customers.
-
-## Business Impact
-
-This analysis identifies key customer segments and channel behaviors that can drive marketing ROI. Key findings include higher-income customers making 40% more web purchases and distinct clustering patterns revealing four unique customer personas with different purchasing behaviors.
+Analyzing customer behavior, campaign performance, and product preferences using SQL and Python to derive actionable marketing insights from a dataset of 2,240 customers.
 
 ## Dataset Overview
 
@@ -20,37 +16,27 @@ The dataset contains customer demographics, purchasing behavior across 6 product
 
 ## Analysis Components
 
-### 1. Customer Profiling
-Analyzed demographic characteristics to understand the average customer base including income distribution, age demographics, education levels, and family composition.
-
-**Tools:** PostgreSQL
-
-**Key Findings:**
-- Average customer income and age profiles
-- Education and marital status distributions
-- Family structure patterns
-
-### 2. Campaign Performance Analysis
+### 1. Campaign Performance Analysis
 Evaluated the effectiveness of 5 marketing campaigns by measuring acceptance rates, total purchases generated, and revenue per customer.
 
 **Tools:** PostgreSQL
 
-**Key Insights:**
-- Campaign-by-campaign comparison of total purchases and revenue
-- Average spending per customer who accepted each campaign
-- Best and worst performing campaigns identified
+**Results:**
+- Campaign 5 won with 15% acceptance and $263k revenue
+- Campaign 5 has best ROI at $1,616 per customer
+- Campaign 2 failed catastrophically (1.3% acceptance) — discontinue immediately
 
-### 3. Product Category Performance
+### 2. Product Category Performance
 Assessed customer engagement and spending across 6 product categories to identify top performers and growth opportunities.
 
 **Tools:** PostgreSQL
 
 **Results:**
-- Customer penetration rates by product category
-- Revenue contribution by category
-- Product affinity patterns
+- Wines ($681k) and Meat ($374k) dominate—76% of total revenue
+- Fruits ($59k) are the worst performer despite good reach
+- Meat has 100% penetration—every customer buys it
 
-### 4. Customer Segmentation (K-Means Clustering)
+### 3. Customer Segmentation (K-Means Clustering)
 Applied unsupervised machine learning to identify 4 distinct customer segments based on demographics, spending patterns, and purchasing behavior.
 
 **Tools:** Python (pandas, scikit-learn), PostgreSQL
@@ -65,17 +51,18 @@ Applied unsupervised machine learning to identify 4 distinct customer segments b
 
 **Output:** 4 customer personas with distinct characteristics for targeted marketing
 
-### 5. Purchase Channel Analysis
+### 4. Purchase Channel Analysis
 Investigated factors driving web purchases including income brackets, education levels, website visit frequency, and family status.
 
 **Tools:** PostgreSQL
 
-**Insights:**
-- Web purchase behavior by income bracket
-- Education level impact on online shopping
-- Relationship between website visits and conversions
-- Impact of having children on web purchase frequency
-- Campaign influence on web channel usage
+**Results:**
+- Upper-middle income ($60-80k) customers make the most web purchases (5.66 avg)
+- Critical paradox: Customers who visit the website MORE make FEWER purchases—this indicates serious conversion problems
+
+## Tableau Visualizations
+
+**Source:**: https://public.tableau.com/app/profile/ruitao.chen/viz/MarketingCampaignAnalysis_17606248101080/Dashboard1
 
 ## Technical Stack
 
@@ -93,93 +80,13 @@ Investigated factors driving web purchases including income brackets, education 
 - StandardScaler for feature normalization
 - Elbow method for optimal cluster determination
 
-## Project Structure
-
-```
-marketing_data_analysis/
-├── data/
-│   └── raw/
-│       ├── marketing_data.csv
-│       └── marketing_data_dictionary.csv
-├── sql/
-│   ├── schema.sql
-│   ├── average_customer.sql
-│   ├── campaign_success.sql
-│   ├── product_performance.sql
-│   ├── queries.sql
-│   └── web_purchase_factors.sql
-├── analysis/
-│   └── scripts/
-│       └── customer_profile_clustering.py
-└── README.md
-```
-
-## Setup Instructions
-
-### Prerequisites
-- PostgreSQL (version 12+)
-- Python 3.8+
-- pip
-
-### Database Setup
-
-1. Create the PostgreSQL database:
-```sql
-CREATE DATABASE marketing_db;
-```
-
-2. Load the schema and data:
-```bash
-psql -U postgres -d marketing_db -f sql/schema.sql
-```
-
-### Python Environment Setup
-
-Install required packages:
-```bash
-pip install pandas psycopg2 scikit-learn matplotlib seaborn
-```
-
-Update database credentials in `customer_profile_clustering.py`:
-```python
-connection = psycopg2.connect(
-    host="localhost",
-    database="marketing_db",
-    user="your_username",
-    password="your_password"
-)
-```
-
-## Running the Analysis
-
-### SQL Queries
-Execute individual SQL files to generate specific insights:
-```bash
-psql -U postgres -d marketing_db -f sql/campaign_success.sql
-```
-
-### Python Clustering Analysis
-Run the customer segmentation script:
-```bash
-python analysis/scripts/customer_profile_clustering.py
-```
-
-This generates cluster visualizations and segment profiles.
-
 ## Key Business Recommendations
 
-Based on the analysis, consider:
-1. Targeting high-income segments with premium product campaigns
-2. Optimizing web experience for customers with higher visit frequencies
-3. Tailoring campaigns to the 4 identified customer personas
-4. Focusing on top-performing product categories and channels
-
-## Future Enhancements
-
-- Implement predictive modeling for campaign response rates
-- Time-series analysis of purchase patterns
-- Customer lifetime value calculations
-- A/B testing framework for campaign optimization
+Based on the analysis:
+1. Fix Campaign 2 - Either redesign completely or kill it and reallocate budget.
+2. Optimize for High-Income Customers - The $60K-$90K income bracket makes 184% more web purchases than the lowest bracket. Web experience should prioritize this segment.
+3. Solve the Web Browsing Problem - Customers visiting 7+ times per month actually purchase LESS than those visiting 3-4 times. This suggests friction in your checkout or decision-making process.
+4. Tailoring campaigns to the 4 identified customer personas
 
 ## Author
 
