@@ -2,42 +2,48 @@
 SELECT
     'Wines' AS product_category,
     COUNT(*) AS customer_count,
-    SUM(mntwines) AS total_sales
+    SUM(mntwines) AS total_sales,
+    SUM(mntwines)/COUNT(*) AS average_order_size
 FROM marketing_data
 WHERE mntwines > 0
 UNION ALL
 SELECT
     'Fruits' AS product_category,
     COUNT(*) AS customer_count,
-    SUM(mntfruits) AS total_sales
+    SUM(mntfruits) AS total_sales,
+    SUM(mntfruits)/COUNT(*) AS average_order_size
 FROM marketing_data
 WHERE mntfruits > 0
 UNION ALL
 SELECT
     'Meat Products' AS product_category,
     COUNT(*) AS customer_count,
-    SUM(mntmeatproducts) AS total_sales
+    SUM(mntmeatproducts) AS total_sales,
+    SUM(mntmeatproducts)/COUNT(*) AS average_order_size
 FROM marketing_data
 WHERE mntmeatproducts > 0
 UNION ALL
 SELECT
     'Fish Products' AS product_category,
     COUNT(*) AS customer_count,
-    SUM(mntfishproducts) AS total_sales
+    SUM(mntfishproducts) AS total_sales,
+    SUM(mntfishproducts)/COUNT(*) AS average_order_size
 FROM marketing_data
 WHERE mntfishproducts > 0
 UNION ALL
 SELECT
     'Sweet Products' AS product_category,
     COUNT(*) AS customer_count,
-    SUM(mntsweetproducts) AS total_sales
+    SUM(mntsweetproducts) AS total_sales,
+    SUM(mntsweetproducts)/COUNT(*) AS average_order_size
 FROM marketing_data
 WHERE mntsweetproducts > 0
 UNION ALL
 SELECT
     'Gold Products' AS product_category,
     COUNT(*) AS customer_count,
-    SUM(mntgoldprods) AS total_sales
+    SUM(mntgoldprods) AS total_sales,
+    SUM(mntgoldprods)/COUNT(*) AS average_order_size
 FROM marketing_data
 WHERE mntgoldprods > 0
 ;
