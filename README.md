@@ -1,18 +1,12 @@
 # Marketing Campaign Analysis
 
-Analyzing customer behavior, campaign performance, and product preferences using SQL and Python to derive actionable marketing insights from a dataset of 2,240 customers.
+Analyzing customer behavior, campaign performance, and product preferences using SQL and Python to derive actionable marketing insights from a Kaggle dataset.
 
 ## Dataset Overview
 
 **Source:** [Marketing Campaign Dataset](https://mavenanalytics.io/data-playground/marketing-campaign-results?utm_source=chatgpt.com)
 
 The dataset contains customer demographics, purchasing behavior across 6 product categories, campaign acceptance rates, and channel preferences spanning 2012-2014.
-
-**Key Metrics:**
-- 2,240 customers across multiple countries
-- 6 product categories (Wines, Meats, Fruits, Fish, Sweets, Gold)
-- 5 marketing campaigns tracked
-- 4 purchase channels (Web, Catalog, Store, Deals)
 
 ## Analysis Components
 
